@@ -1,0 +1,64 @@
+/* Form font awesome */
+select.fontaw{font-family: fontAwesome, sans-serif}
+
+.mt{margin-top:90px /* height 70px for navbar-fixed-top */}
+.pt{padding-top:0 /* height 70px for navbar-fixed-top */}
+/* button toggle menu kiri */
+#menu-toggle{position:relative; padding:10px; margin:10px; background-color: rgba(234, 234, 234, 0.7); border-radius:20px;}
+
+.dataTables_wrapper {margin: 0 auto; width: 100%;}
+/*Control datatables width */
+.cari input:focus, .pilihan textarea:focus{box-shadow: 0 0 5px rgba(81, 203, 238, 1); border: 1px solid rgba(81, 203, 238, 0.6);}
+#tdisplay_wrapper {margin: 0 auto; width: 100%;}
+table.dataTable.display thead tr th.att{background-color: rgba(0,50,240,0.7);}
+table.dataTable.display tbody tr.odd td.att{background-color: rgba(0,10,240,0.3);}
+table.dataTable.display tbody tr.even td.att{background-color: hsla(240, 43%, 51%, 0.3)}
+table.dataTable.display tbody tr:hover{cursor:pointer}
+/* table.dataTable.display thead div.chosen-container-multi{background-color: rgba(0,50,240,0.7);} */
+
+.width-300{width:300px;}
+.nowrap{white-space: nowrap;}
+.nomor{max-width:5px}
+.msgcenter{text-align:center;}
+.abu{color:#aaa;}
+.tdc{color: red;}
+#hasil{font-weight:bold;}
+tfoot tr td{border: 0}
+/* Place tfoot in header only */
+/* tfoot{display: table-header-group;} */
+
+/* Sub Content */
+td.details-control {background: url('../../resources/details_open.png') no-repeat center center;cursor: pointer;}
+tr.shown td.details-control{background: url('../../resources/details_close.png') no-repeat center center;}
+
+.mb-3{margin-bottom:10px}
+.vertical{color: red; transform-origin: top right; transform: rotate(270deg); height:100px;}
+
+/* Button group of Briva */
+.but-grup {width:100%; font:16px Arial;}
+
+.caption{color:red; text-decoration:italic; font-size:12px;}
+p.bordermsg{border-style: double;}
+
+/* pform */
+.smallnote{color:#ccc;}
+.cnotnull{color:red;}
+.cnote{color:#b00;font-weight:normal;}
+input.setengah{width:50%;float:left;}
+
+/* datatables icon */
+span.abcrud{font-size:1em;}
+span.abcrud:hover{cursor:pointer; color: #fd2e02 ;}
+.blue{color:#41a8e2;}
+.red{color:red;}
+.orange{color:orange;}
+.green{color:#3ac7a1;}
+
+#loadspinner {display: flex; justify-content: center; align-items: center; height: 100%; width: 100%;}
+
+/*sidebar sb-admin2*
+.sidebar{
+    overflow-y: scroll;
+    position: fixed;
+}
+/**/

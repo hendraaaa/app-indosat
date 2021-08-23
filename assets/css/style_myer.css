@@ -1,0 +1,20 @@
+/* memberi efek bayangan simetris pada link dan kotak untuk pform */
+.boxbelow{box-shadow:0 3px 5px 0 #ccc;}
+.boxabove{box-shadow:0 -3px 5px 0 #ccc;}
+.page{margin:auto;}
+.cstatusbar{color:red; background:white; height:20px;}
+
+/* umum */
+.clearfix:after{content:" ";clear:both;display:block;}
+.clear{clear:both;}
+.margin10{margin:10px;}
+.padding10{padding:5px;}
+
+.radio-toolbar{font-family:Arial; font-size:15px;}
+.radio-toolbar{padding:10px;}
+.radio-toolbar:nth-child(odd) {margin-bottom:0;background-color: #fbfbfb;}
+.radio-toolbar:nth-child(even) {margin-bottom:0;background-color: #fff;}
+.radio-toolbar:hover{background-color: #fffbae;}
+.radio-toolbar input[type="radio"] {display:none;}
+.radio-toolbar label {display:inline-block; background-color:#eee; padding:11px;cursor:pointer;}
+.radio-toolbar input[type="radio"]:checked + label {background-color:#46bdf4; color:white;}
