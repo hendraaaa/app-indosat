@@ -45,7 +45,7 @@
                 <div class="form-group row  align-items-center">
                     <label class="col-sm-2 font-weight-bold">SN</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" value="<?php echo $sn; ?>" name="sn" id="sn" placeholder="SN">
+                        <input type="number" class="form-control" value="<?php echo $sn; ?>" name="sn" id="sn" placeholder="SN">
                     </div>
                 </div>
                 <div class="form-group row  align-items-center">

@@ -20,6 +20,8 @@
             height: 80vh;
         }
     </style>
+    <title>Home</title>
+
 
 </head>
 
@@ -32,30 +34,20 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="<?php echo base_url('home') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider">
             <!-- Heading -->
-            <div class="sidebar-heading">
-                Interface
-            </div>
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
-                    </div>
-                </div>
+            <li class="nav-item active">
+                <a class="nav-link" href="<?php echo base_url('history') ?>">
+                    <i class="fas fa-fw fa-history"></i>
+                    <span>History</span></a>
             </li>
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -108,16 +100,16 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Data Gudang</h6>
                         </div>
                         <div class="card-body">
 
 
-                            <div class="print">
-                                <button id="tambah" class="btn btn-primary btn-circle btn-sm mb-2 mr-1">
+                            <div class="print mb-4">
+                                <button id="tambah" title="Tambah Data" class="btn btn-primary btn-circle btn-sm mb-2 mr-1">
                                     <i class="fa fa-plus"></i>
                                 </button>
-                                <button id="deleteAll" class="btn btn-danger btn-circle btn-sm mb-2">
+                                <button id="deleteAll" title="Hapus semua Data" class="btn btn-danger btn-circle btn-sm mb-2">
                                     <i class="fa fa-trash"></i>
                                 </button>
                             </div>
@@ -220,9 +212,10 @@
                 style: 'multi',
                 selector: 'td:not(:nth-child(10))'
             },
-            dom: 'Bfrtip',
+            dom: 'lBfrtip',
             buttons: [{
                     extend: 'print',
+                    titleAttr: 'Print',
                     text: '<i class="fa fa-lg fa-print"></i>',
                     className: 'btn btn-info btn-circle btn-sm mb-2 mr-2',
                     exportOptions: {
@@ -232,6 +225,7 @@
                 },
                 {
                     extend: "excel",
+                    titleAttr: 'Excel',
                     text: '<i class="fa fa-lg fa-file-excel"></i>',
                     className: 'btn btn-secondary btn-circle btn-sm mb-2 mr-2',
                     exportOptions: {
@@ -247,6 +241,7 @@
                 {
                     extend: "copy",
                     text: '<i class="fa fa-lg fa-copy"></i>',
+                    titleAttr: 'Copy',
                     className: 'btn btn-dark btn-circle btn-sm mb-2 mr-2',
                     exportOptions: {
                         columns: ':visible',
@@ -384,13 +379,14 @@
     function hapus(id) {
 
         Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Apakah anda yakin ingin menghapus ?',
+            text: "Data yang dihapus tidak dapat dikembalikan!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Yes hapus!',
+            cancelButtonText:'Batalkan'
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
