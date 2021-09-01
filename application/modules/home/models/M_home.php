@@ -6,7 +6,7 @@ class M_Home extends CI_Model
     var $table = 'barang'; //nama tabel dari database
     var $column_order = array('id','site','jenis_barang','brand','deskripsi','sn','kondisi','tanggal','last_modify'); //Sesuaikan dengan field
     var $column_search = array('id','site', 'jenis_barang', 'brand', 'deskripsi', 'sn', 'kondisi', 'tanggal', 'last_modify'); //field yang diizin untuk pencarian 
-    var $order = array('id' => 'asc'); // default order 
+    var $order = array('id' => 'desc'); // default order 
     private function _get_datatables_query()
     {
         $this->db->from($this->table);
@@ -102,6 +102,13 @@ class M_Home extends CI_Model
        
     }
     public function hapusData($id){
+        $sql = "SELECT sn FROM barang WHERE id = '$id'";
+        $hasilquery = $this->db->query($sql);
+        $serial_n = json_decode(json_encode($hasilquery->result()), true);
+        // echo $sn[0]['sn'];die;
+        $sn = $serial_n[0]['sn'];
+        $username = $this->session->userdata('sess_app')['nama'];
+        $this->db->insert('history',['sn'=>$sn, 'username'=>$username, 'action'=>'Delete']);
         return $this->db->delete('barang',['id'=>$id]);
     }
     public function hapusSemuaData($id,$jumlah){
