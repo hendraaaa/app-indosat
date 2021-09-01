@@ -121,14 +121,14 @@
                                             <tr>
                                                 <th>id</th>
                                                 <th>No</th>
-                                                <th>site</th>
-                                                <th style="width: 100px;">jenis barang</th>
-                                                <th>brand</th>
-                                                <th>deskripsi</th>
+                                                <th>Site</th>
+                                                <th style="width: 100px;">Jenis Barang</th>
+                                                <th>Brand</th>
+                                                <th>Deskripsi</th>
                                                 <th>SN</th>
-                                                <th>kondisi</th>
-                                                <th>tanggal</th>
-                                                <th>last modify</th>
+                                                <th>Kondisi</th>
+                                                <th>Tanggal</th>
+                                                <th>Last Modify</th>
                                                 <th style="text-align: center;width: 100px;">#</th>
                                             </tr>
                                         </thead>

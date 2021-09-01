@@ -110,8 +110,11 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Username</th>
+                                                <th>User</th>
                                                 <th>Action</th>
+                                                <th>Site</th>
+                                                <th>Brand</th>
+                                                <th>Description</th>
                                                 <th>SN</th>
                                                 <th>Time</th>
                                             </tr>

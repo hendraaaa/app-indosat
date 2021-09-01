@@ -32,6 +32,9 @@ class History extends MX_Controller
                 $row[] = $no;
                 $row[] = $field->username;
                 $row[] = $field->action;
+                $row[] = $field->site;
+                $row[] = $field->brand;
+                $row[] = $field->desk;
                 $row[] = $field->SN;
                 $row[] = $field->time;
                 $data[] = $row;
