@@ -102,17 +102,32 @@ class M_Home extends CI_Model
        
     }
     public function hapusData($id){
-        $sql = "SELECT sn FROM barang WHERE id = '$id'";
+        $sql = "SELECT sn,site, brand, deskripsi FROM barang WHERE id = '$id'";
         $hasilquery = $this->db->query($sql);
         $serial_n = json_decode(json_encode($hasilquery->result()), true);
         // echo $sn[0]['sn'];die;
         $sn = $serial_n[0]['sn'];
+        $site = $serial_n[0]['site'];
+        $brand = $serial_n[0]['brand'];
+        $desc = $serial_n[0]['deskripsi'];
+
         $username = $this->session->userdata('sess_app')['nama'];
-        $this->db->insert('history',['sn'=>$sn, 'username'=>$username, 'action'=>'Delete']);
+        $this->db->insert('history',['sn'=>$sn, 'site'=>$site, 'brand'=>$brand, 'desk'=>$desc, 'username'=>$username, 'action'=>'Delete']);
         return $this->db->delete('barang',['id'=>$id]);
     }
     public function hapusSemuaData($id,$jumlah){
         for($i = 0;$i < $jumlah;$i++){
+            $sql = "SELECT sn,site, brand, deskripsi FROM barang WHERE id = '$id[$i]'";
+            $hasilquery = $this->db->query($sql);
+            $serial_n = json_decode(json_encode($hasilquery->result()), true);
+            // echo $sn[0]['sn'];die;
+            $sn = $serial_n[0]['sn'];
+            $site = $serial_n[0]['site'];
+            $brand = $serial_n[0]['brand'];
+            $desc = $serial_n[0]['deskripsi'];
+
+            $username = $this->session->userdata('sess_app')['nama'];
+            $this->db->insert('history',['sn'=>$sn, 'site'=>$site, 'brand'=>$brand, 'desk'=>$desc, 'username'=>$username, 'action'=>'Delete']);
             $this->db->delete('barang',['id'=> $id[$i]]);
         }
         return true;
